@@ -54,8 +54,8 @@ Shadowsocks-libev-full for OpenWrt
    # 开始编译
    make package/shadowsocks-libev-full/compile V=s
    ```
-   
-   ---bash
+ - 从 OpenWrt 的 [SDK][S] 编译  
+   ```bash
    # 以 ar71xx 平台为例
 tar xjf OpenWrt-SDK-ar71xx-for-linux-x86_64-gcc-4.8-linaro_uClibc-0.9.33.2.tar.bz2
 cd OpenWrt-SDK-ar71xx-*
@@ -72,7 +72,7 @@ git clone https://github.com/chenhw2/openwrt-shadowsocksr.git package/feeds/shad
 make menuconfig
 # 开始编译
 make package/feeds/shadowsocksr-libev/compile V=99
- ```
+```
  
 配置
 ---
