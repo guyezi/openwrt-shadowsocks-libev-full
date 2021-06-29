@@ -54,25 +54,27 @@ Shadowsocks-libev-full for OpenWrt
    # 开始编译
    make package/shadowsocks-libev-full/compile V=s
    ```
- - 从 OpenWrt 的 [SDK][S] 编译  
+   
+   从 OpenWrt 的 [SDK][S] 编译  
+
    ```bash
    # 以 ar71xx 平台为例
-tar xjf OpenWrt-SDK-ar71xx-for-linux-x86_64-gcc-4.8-linaro_uClibc-0.9.33.2.tar.bz2
-cd OpenWrt-SDK-ar71xx-*
-# 安装 feeds
-# 如果是 uClibc SDK (15.05.1 及以下)
-  git clone https://github.com/aa65535/openwrt-feeds.git package/feeds
-# 如果是 musl SDK (trunk 或 LEDE)
-  ./scripts/feeds update base packages
-  ./scripts/feeds install zlib libopenssl libpolarssl libmbedtls libpcre
-  rm -rf package/feeds/base/mbedtls/patches
-# 获取 shadowsocksr-libev Makefile
-git clone https://github.com/chenhw2/openwrt-shadowsocksr.git package/feeds/shadowsocksr-libev
-# 选择要编译的包 Network -> shadowsocksr-libev
-make menuconfig
-# 开始编译
-make package/feeds/shadowsocksr-libev/compile V=99
-```
+   tar xjf OpenWrt-SDK-ar71xx-for-linux-x86_64-gcc-4.8-linaro_uClibc-0.9.33.2.tar.bz2
+   cd OpenWrt-SDK-ar71xx-*
+   ## 安装 feeds
+   ## 如果是 uClibc SDK (15.05.1 及以下)
+   git clone https://github.com/aa65535/openwrt-feeds.git package/feeds
+   ## 如果是 musl SDK (trunk 或 LEDE)
+   ./scripts/feeds update base packages
+   ./scripts/feeds install zlib libopenssl libpolarssl libmbedtls libpcre
+   rm -rf package/feeds/base/mbedtls/patches
+   ## 获取 shadowsocksr-libev Makefile
+   git clone https://github.com/chenhw2/openwrt-shadowsocksr.git package/feeds/shadowsocksr-libev
+   ## 选择要编译的包 Network -> shadowsocksr-libev
+   make menuconfig
+   ## 开始编译
+   make package/feeds/shadowsocksr-libev/compile V=99
+   ```
  
 配置
 ---
